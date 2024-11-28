@@ -1,0 +1,22 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: users
+  rules:
+    - actions:
+        - read
+        - update
+      effect: EFFECT_ALLOW
+      roles:
+        - engineering
+        - sales
+        - manager
+      condition:
+        match:
+          expr: request.resource.id == request.principal.id
+    
+    - actions:
+        - '*'
+      effect: EFFECT_ALLOW
+      roles:
+        - admin

@@ -1,0 +1,6 @@
+server:
+  httpListenAddr: ":3592"
+storage:
+  driver: "disk"
+  disk:
+    directory: /home/jeet/Projects/cerbos/policies
